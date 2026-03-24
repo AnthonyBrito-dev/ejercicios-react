@@ -1,7 +1,6 @@
 import Encabezado from "../components/encabezado";
 
 let bgcc = ()=>{
-    //let main = document.getElementById('main') 
     let color = document.body.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
     return color
 }

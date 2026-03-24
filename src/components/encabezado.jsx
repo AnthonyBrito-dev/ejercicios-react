@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
 function Volver() {
-    const colorBody = document.body.style.backgroundColor = 'white'
+    //const colorBody = document.body.style.backgroundColor = 'white'
     return (
-        <Link onClick={colorBody} className="hover:text-amber-700" to={"/"}>Volver al inicio</Link>
+        <Link className="hover:text-amber-700" to={"/"}>Volver al inicio</Link>
     )
 }
 
