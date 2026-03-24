@@ -1,11 +1,10 @@
-import Volver from "../components/volver";
+import Encabezado from "../components/encabezado";
 
 export default function Ejercicio6() {
+    const ejercicio6 = ``
     return (
-        <div>
-            <Volver></Volver>
-            <h2 className="text-2xl">¡Bienvenido al Ejercicio 6!</h2>
-            <p>Aquí es donde pondrás tu código de práctica.</p>
-        </div>
+        <>
+        <Encabezado texto={ejercicio6} num={6}></Encabezado>
+        </>
     );
 }

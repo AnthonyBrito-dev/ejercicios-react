@@ -5,7 +5,7 @@ export default function App() {
 
   return (
     <>
-    <main className='ml-8 mt-8'>
+    <main id='principal'>
       <Navbar /> 
     </main>
     </>
