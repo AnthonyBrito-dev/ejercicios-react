@@ -21,28 +21,21 @@ function Temporizador(){
         }
 
         return numeroFormateado
-    } 
-
-    const [segund, setSegund] = useState([seg,min,hr])
+    }
     
     //Crear componente iniciar
     const iniciar = ()=>{
-    
-        let t = setInterval(() => {
+        let t = setInterval(() => { 
             seg += 1
-            
+            //Se añade la funcion de formateo a cada variable
             setTiempo(`${shownumbers(hr)}:${shownumbers(min)}:${shownumbers(seg)}`)
-            
-            setSegund(segund.splice(0,3, [seg, min, hr]))
-            
-            console.log('Estado de seg:' + segund) 
-    
-            if (seg == 59){
+
+            if (seg == 59){ //Condicion para agregar minutos
                 min += 1
                 seg = -1 
             }
     
-            if (min > 59){
+            if (min > 59){ //Condicion para agregar horas 
                 min = 0
                 hr += 1
             }
@@ -53,7 +46,7 @@ function Temporizador(){
             })
 
             const botonReiniciar = document.getElementById("reiniciar")
-            botonReiniciar.addEventListener("click", ()=>{
+            botonReiniciar.addEventListener("click", ()=>{ //Usamos el boton para reiniciar y colocar las variables en cero
                 seg = 0
                 min = 0
                 hr = 0
