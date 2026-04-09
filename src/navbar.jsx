@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { HashRouter, Routes, Route} from 'react-router-dom'
 import Ejercicio1 from './exercises/ejercicio1'
 import Ejercicio2 from './exercises/ejercicio2'
 import Ejercicio3 from './exercises/ejercicio3'
@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/eje1' element={<Ejercicio1 />} />
@@ -27,7 +27,7 @@ export default function Navbar() {
           <Route path='/eje8' element={<Ejercicio8 />} />
           <Route path='/eje9' element={<Ejercicio9 />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
