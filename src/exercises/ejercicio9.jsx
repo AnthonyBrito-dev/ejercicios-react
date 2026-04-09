@@ -10,7 +10,7 @@ const todoList = [
 function Tareas() {
     const [lista, setLista] = useState(() => {
         const guardado = localStorage.getItem('tareas');
-        if (guardado.length > 2) {
+        if (guardado && guardado.length > 2) {
             return JSON.parse(guardado);
         }
         return todoList;
