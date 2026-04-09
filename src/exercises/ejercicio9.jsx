@@ -9,8 +9,8 @@ const todoList = [
 
 function Tareas() {
     const [lista, setLista] = useState(() => {
-        const guardado = localStorage.getItem('segundasTareas');
-        if (guardado) {
+        const guardado = localStorage.getItem('tareas');
+        if (guardado.length > 2) {
             return JSON.parse(guardado);
         }
         return todoList;
@@ -28,15 +28,19 @@ function Tareas() {
     };
 
     useEffect(()=>{
-        localStorage.setItem('segundasTareas', JSON.stringify(lista))
-        //localStorage.getItem("segundasTareas")
+        localStorage.setItem('tareas', JSON.stringify(lista))
     },[lista])
+
+    const limpiarTareas = () => {
+        const tareasPendientes = lista.filter(tarea => !tarea.check);
+        setLista(tareasPendientes);
+    };
 
     return (
     <>
     <p className="text-2xl mb-4">Lista de Tareas</p>
     <BajarTareas listaTareas={lista} funcionCambiarCheck={cambiarCheck}/>
-    <button className="p-2 border-2 border-black hover:cursor-pointer rounded-lg">Limpiar</button>
+    <button onClick={limpiarTareas} className="p-2 border-2 border-black hover:cursor-pointer rounded-lg">Limpiar</button>
     </>
     )
 }

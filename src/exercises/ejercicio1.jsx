@@ -1,11 +1,12 @@
 import Encabezado from "../components/encabezado";
 
-let bgcc = ()=>{
-    let color = document.body.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
-    return color
-}
 
 function ButtonChangeColor(){  
+    const bgcc = ()=>{
+        let color = document.body.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
+        return color
+    }
+
     return <button onClick={bgcc} className="p-5 rounded-2xl cursor-pointer border-black border-2 hover:border-gray-400 hover:border-2 hover:bg-black hover:text-amber-50">Cambiar Color</button>
 }
 
